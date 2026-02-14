@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Charm:wght@400;700&family=Elsie:wght@400;900&family=Great+Vibes&family=MonteCarlo&family=Parisienne&family=Prata&family=Quintessential&family=Square+Peg&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Protest Riot", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  /* background: url("./assets/bg1.webp"); */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.animate-bounce {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.heart-photo {
+  position: fixed;
+  width: 220px;
+  height: 220px;
+
+  /* 👇 Full photo heart ke andar fit hogi */
+  object-fit: contain;
+
+  /* 👇 Center alignment */
+  object-position: center;
+
+  background-color: transparent;
+
+  clip-path: path("M110 35 C80 -15,0 45,55 120 C110 200,110 200,165 120 C220 45,140 -15,110 35 Z");
+
+  animation: floatHeart 4s ease-in-out infinite;
+  z-index: 20;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    /* soft white edge */
+    0 0 18px rgba(255, 255, 255, 0.6),
+    /* glow */
+    0 0 35px rgba(255, 180, 220, 0.4);
+  /* romantic pink aura */
+
+
+  filter:
+    drop-shadow(0 0 2px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 6px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 12px rgba(255, 200, 230, 0.5));
+
+
+
+  animation:
+    floatHeart 4s ease-in-out infinite,
+    heartBeatGlow 1.8s ease-in-out infinite;
+
+
+
+
+}
+
+
+
+
+
+.heart-photo:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
+
+
+/* LEFT SIDE */
+.photo-0 {
+  left: -2%;
+  top: -1%;
+}
+
+.photo-1 {
+  left: 6%;
+  top: 14%;
+}
+
+.photo-2 {
+  left: -1%;
+  top: 30%;
+}
+
+.photo-3 {
+  left: 5%;
+  top: 49%;
+}
+
+.photo-4 {
+  left: -1%;
+  top: 68%;
+}
+
+/* RIGHT SIDE */
+.photo-5 {
+  right: -2%;
+  top: -1%;
+}
+
+.photo-6 {
+  right: 6%;
+  top: 14%;
+}
+
+.photo-7 {
+  right: -1%;
+  top: 30%;
+}
+
+.photo-8 {
+  right: 5%;
+  top: 49%;
+}
+
+.photo-9 {
+  right: -1%;
+  top: 68%;
+}
+
+
+/* 👇 NEW BOTTOM HEARTS */
+.photo-10 {
+  left: 18%;
+  bottom: 6%;
+}
+
+.photo-11 {
+  right: 18%;
+  bottom: 6%;
+}
+
+
+@keyframes heartBeatGlow {
+  0% {
+    filter:
+      drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 8px rgba(255, 180, 220, 0.5));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 10px rgba(255, 255, 255, 1)) drop-shadow(0 0 25px rgba(255, 150, 210, 0.9));
+  }
+
+  100% {
+    filter:
+      drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 8px rgba(255, 180, 220, 0.5));
+  }
+}
+
+
+.gift-popup {
+  text-align: center;
+  padding: 10px;
+}
+
+.gift-img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: auto;
+  box-shadow: 0 0 25px rgba(255, 100, 160, 0.6);
+  animation: giftFloat 3s ease-in-out infinite;
+}
+
+.gift-title {
+  font-size: 28px;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #ff4f81;
+}
+
+.gift-text {
+  margin-top: 8px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.5;
+}
+
+@keyframes giftFloat {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.romantic-swal {
+  border-radius: 20px;
+  padding: 25px !important;
+
+  /* 💎 Glass romantic background */
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 30px rgba(255, 120, 180, 0.5),
+    0 0 60px rgba(255, 120, 180, 0.25);
+}
+
+
+.rose-petal {
+  position: fixed;
+  top: -40px;
+  width: 28px;
+  pointer-events: none;
+  z-index: 80;
+  animation: fallPetals linear forwards;
+  animation-duration: 6s;
+}
+
+@keyframes fallPetals {
+  0% {
+    transform: translateY(-40px) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.cinematic-aura {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 40;
+
+  background: radial-gradient(circle at center,
+      rgba(255, 120, 180, 0.35) 0%,
+      rgba(255, 120, 180, 0.15) 35%,
+      rgba(255, 120, 180, 0.05) 55%,
+      transparent 75%);
+
+  backdrop-filter: blur(6px);
+
+  animation: auraPulse 3s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.gift-popup{
+  position:relative;
+  text-align:center;
+}
+
+/* 🎁 Top Right Mini Gift Button */
+.mini-gift-btn{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+
+  background:linear-gradient(135deg,#ff6fa5,#ff3d7f);
+  border:none;
+  color:white;
+
+  width:42px;
+  height:42px;
+  border-radius:50%;
+
+  font-size:20px;
+  cursor:pointer;
+
+  box-shadow:0 0 15px rgba(255,120,180,0.7);
+
+  transition:0.3s;
+}
+
+.mini-gift-btn:hover{
+  transform:scale(1.15) rotate(10deg);
+  box-shadow:0 0 25px rgba(255,120,180,1);
+}
+
+.gallery-page{
+  min-height:100vh;
+  background: radial-gradient(circle,#ffe3ec,#ffd6e7,#ffc0cb);
+  padding:40px;
+  text-align:center;
+}
+
+.gallery-title{
+  font-size:42px;
+  font-weight:bold;
+  color:#ff3d7f;
+  margin-bottom:25px;
+}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+  gap:20px;
+}
+
+.gallery-img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  box-shadow:0 0 18px rgba(255,120,180,0.5);
+  transition:0.3s;
+}
+
+.gallery-img:hover{
+  transform:scale(1.06);
+}
+
+
+@keyframes zoomIn{
+  from{
+    transform:scale(0.8);
+    opacity:0;
+  }
+  to{
+    transform:scale(1);
+    opacity:1;
+  }
+}
+
+
+/* 🎬 CINEMATIC FULL IMAGE VIEWER */
+/* 🎬 FINAL PERFECT SIZE */
+.swal2-popup .cinematic-viewer-img{
+  width:340px;        /* 👈 पहले 420 था — अब छोटा */
+  max-width:85vw;
+  height:440px;       /* 👈 पहले 520 था */
+  object-fit:cover;
+  border-radius:20px;
+  box-shadow:0 0 35px rgba(255,100,150,0.9);
+  animation:zoomIn 0.35s ease;
+}
+
+
+/* 💖 Gallery thumbnails */
+.swal2-popup .gallery-img{
+  width:130px;
+  height:150px;
+  object-fit:cover;
+  border-radius:14px;
+  cursor:pointer;
+  transition:0.35s;
+  box-shadow:0 0 15px rgba(255,105,180,0.7);
+}
+
+.swal2-popup .gallery-img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(255,120,180,1);
+}
+
+
